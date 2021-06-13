@@ -17,24 +17,24 @@ By the end of class, you should be able to to:
 
 ### Lab Environment
 
-- You will use your local Vagrant virtual machine for today's activities. 
-    
+- You will use your local Vagrant virtual machine for today's activities.
+
   - Student access:
     - Username:`sysadmin`
     - Password: `cybersecurity`
 
 - Before completing today's activities, the setup script for Day 3 should be executed.
   - Before going to break, run:
-  
-    `/home/sysadmin/Documents/setup_scripts/sysadmin/day3_stu_setup.sh` 
 
-### Slideshow 
+    `/home/sysadmin/Documents/setup_scripts/sysadmin/day3_stu_setup.sh`
+
+### Slideshow
 
 The slides for today can be viewed on Google Drive here: [4.3 Slides](https://docs.google.com/presentation/d/1cnU4gJSWqZTK_o7H6CTnjS-JW9UaqWLYd23SD-wmcN4/edit)
 
 ---
 
-### 01. Welcome and Review 
+### 01. Welcome and Review
 
 Let's review what we learned in the last class:
 
@@ -60,7 +60,7 @@ Today we will cover permissions on the system before moving on to services and s
 
 - Google Docs is a fantastic resource because we can choose who we share files with and what permission they have when they receive the file, such as whether they can read, comment, or make edits to the file.
 
-This function is an **access control**. 
+This function is an **access control**.
 
 - These controls determine which actions users are able to take on a file (edit, view, etc.).  
 
@@ -180,7 +180,7 @@ The last three characters show the permissions for all other users:
 
 - For the file, the other permission is `r--`. Everyone on the system who is not the owner and not in the group can only read the `my_file` file. They do not have permission to change the file or execute it.
 
-Summary: 
+Summary:
 
 - `my_file` has read and write enabled for the owner and only read enabled for the group and others.
 
@@ -308,7 +308,7 @@ To give everyone read and write permissions.
 
   `sudo chmod 666 my_file`
 
-What should we run to give the user read, write, and execute permissions; the group read and execute permissions; and other read permissions? 
+What should we run to give the user read, write, and execute permissions; the group read and execute permissions; and other read permissions?
   - Run `chmod 754 my_file`
 
 
@@ -333,8 +333,6 @@ We needed the following commands:
 ### 04. Activity Review: Access Controls and Permissions
 
 
-- [Solution Guide: Permissions](Activities/03_Permissions/Solved/README.md)
-
 ### 05. Break
 
 ### 06.  Managing Services
@@ -345,7 +343,7 @@ We needed the following commands:
 
 #### A Brief Introduction to Services and the SMB Exploit
 
-What is a service? 
+What is a service?
 
 - **Servers** are just computers that offer services to other computers.
 
@@ -401,7 +399,7 @@ Since this server has already been compromised, you will proceed by stopping the
 
 - Note:  We need root access in order to change the status of a service, but not to view the status.  Hence we use `sudo` for `start`, `stop`, `enable`, and `disable`, but not `status`.
 
-Run `systemctl -t service --all` 
+Run `systemctl -t service --all`
 
 - `-t` stands for type.
 - `--all` ensures that we see all the available services on the system, even if they aren't running.
@@ -472,10 +470,7 @@ We have removed Samba from the system, so the following commands won't work. But
 - [Activity File: Managing Services](Activities/07_Managing_Services/Unsolved/Readme.md)
 
 
-### 08. Activity Review: Managing Services 
-
-- [Solution Guide: Managing Services](Activities/07_Managing_Services/Solved/Readme.md)
-
+### 08. Activity Review: Managing Services
 
 
 ### 09. Service Users
@@ -566,7 +561,7 @@ Remember, the `--no-create-home` flag creates a user without a home folder.
 
   - The UID is less than 1000.
 
-  - **Note:** `tail` is better than `grep` here, because we know that the user we just created will be last on the list. 
+  - **Note:** `tail` is better than `grep` here, because we know that the user we just created will be last on the list.
 
 Remember, we could also use the `id` command to verify the UID is under 1000.
 
@@ -593,13 +588,9 @@ Scheduling programs to run at certain times is a topic for next week's class. Fo
 ### 11. Activity Review: Service Users
 
 
-- [Solution Guide: Service Users](Activities/10_Service_Users/Solved/Readme.md)
-
 ### 12. Homework Instructions
 
 This week, you will practice all of the hardening steps you have learned this week, but on a new system. You will also be running a few new tools: `chkrootkit` and `lynis`.
-
-  - [Week 4 Homework: Linux SysAdmin Fundamentals](../../../2-Homework/04-Linux-SysAdmin-Fundamentals/Readme.md)
 
 
 ---
