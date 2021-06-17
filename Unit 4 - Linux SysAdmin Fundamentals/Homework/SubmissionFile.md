@@ -4,7 +4,7 @@
 
 1. Permissions on `/etc/shadow` should allow only `root` read and write access.
 
-    - Command to inspect permissions:
+    - Command to inspect permissions: 
 
     - Command to set permissions (if needed):
 
