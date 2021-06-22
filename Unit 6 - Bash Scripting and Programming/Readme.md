@@ -109,7 +109,7 @@ For more information about these Security+ domains, refer to the following resou
 
 This unit's homework assignment can be viewed here: 
 
-- [Unit Homework File](../../2-Homework/06-Bash-Scripting-and-Programming/Instructions/README.md)
+- [Unit Homework File](Homework/README.md)
 
 ### Looking Forward 
 
