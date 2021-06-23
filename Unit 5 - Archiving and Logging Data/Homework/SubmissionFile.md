@@ -8,18 +8,28 @@ Save and submit the completed file for your homework submission.
 
 ### Step 1: Create, Extract, Compress, and Manage tar Backup Archives
 
-1. Command to **extract** the `TarDocs.tar` archive to the current directory:
+1. Command to **extract** the `TarDocs.tar` archive to the current directory: 
 
-2. Command to **create** the `Javaless_Doc.tar` archive from the `TarDocs/` directory, while excluding the `TarDocs/Documents/Java` directory:
+`tar -xf TarDocs.tar` 
 
-3. Command to ensure `Java/` is not in the new `Javaless_Docs.tar` archive:
+2. Command to **create** the `Javaless_Doc.tar` archive from the `TarDocs/` directory, while excluding the `TarDocs/Documents/Java` directory: 
+
+`tar cvf Javaless_Docs.tar --exclude="TarDocs/Documents/Java" TarDocs`
+
+3. Command to ensure `Java/` is not in the new `Javaless_Docs.tar` archive: 
+
+`tar -tvf Javaless_Docs.tar | grep Java`
 
 **Bonus** 
 - Command to create an incremental archive called `logs_backup_tar.gz` with only changed files to `snapshot.file` for the `/var/log` directory:
 
+`sudo tar cvzf logs_backup.tar.gz --listed-incremental=logs_backup.snar --level=0 /var/log`
+
 #### Critical Analysis Question
 
 - Why wouldn't you use the options `-x` and `-c` at the same time with `tar`?
+
+You wouldn't use `-x` and `-c` at the same time with `tar` because they are opposite or contradictory commands, the `-c` option used with `tar` is for creating a new archive while the `-x` option is for extracting files from an existing archive.
 
 ---
 
