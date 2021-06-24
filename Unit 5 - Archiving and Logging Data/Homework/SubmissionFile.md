@@ -35,28 +35,64 @@ You wouldn't use `-x` and `-c` at the same time with `tar` because they are oppo
 
 ### Step 2: Create, Manage, and Automate Cron Jobs
 
-1. Cron job for backing up the `/var/log/auth.log` file:
+1. Cron job for backing up the `/var/log/auth.log` file: 
+
+`crontab -e`
+`0 6 * * 3 tar czf auth_backup.tgz -P /var/log/auth.log`
 
 ---
 
 ### Step 3: Write Basic Bash Scripts
 
-1. Brace expansion command to create the four subdirectories:
+1. Brace expansion command to create the four subdirectories: 
+
+`mkdir -p ~/backups/{freemem,diskuse,openlist,freedisk}`
 
 2. Paste your `system.sh` script edits below:
 
     ```bash
     #!/bin/bash
-    [Your solution script contents here]
+    
+    #Free memory logged to free_mem.txt
+    
+    free -h > ~/backups/freemem/free_mem.txt
+    
+    #Simple output free memory logged to free_mem_simple.txt
+
+    free -h | awk '{print $1, $4}' | sed s/total/free/ | sed s/shared/memory/ > ~/backups/freemem/free_mem_simple.txt
+
+    #Disk usage logged to disk_usage.txt
+
+    du -h > ~/backups/diskuse/disk_usage.txt
+
+    #Open files logged to open_list.txt
+
+    lsof > ~/backups/openlist/open_list.txt
+
+    #File system disk space statistics logged to free_disk.txt
+
+    df -h > ~/backups/freedisk/free_disk.txt
+
+    #Simple file system disk space statistics logged to free_disk_simple.txt
+
+    df -h | awk '{print $1, $2, $3, $5}' | column -t > ~/backups/freedisk/free_disk_simple.txt
+
     ```
 
 3. Command to make the `system.sh` script executable:
 
+`chmod +x system.sh`
+
 **Optional**
 - Commands to test the script and confirm its execution:
 
+`sudo ./system.sh`
+`cat ~/backups/freemem/free_mem.txt ~/backups/diskuse/disk_usage.txt ~/backups/openlist/open_list.txt ~/backups/freedisk/free_disk.txt`
+
 **Bonus**
 - Command to copy `system` to system-wide cron directory:
+
+`sudo cp system.sh /etc/cron.weekly`
 
 ---
 
@@ -69,7 +105,15 @@ You wouldn't use `-x` and `-c` at the same time with `tar` because they are oppo
     - Add your config file edits below:
 
     ```bash
-    [Your logrotate scheme edits here]
+    /var/log/auth.log {
+        weekly
+        rotate 7
+        notifempty
+        compress
+        delaycompress
+        missingok
+        endscript
+    }
     ```
 ---
 
@@ -77,12 +121,15 @@ You wouldn't use `-x` and `-c` at the same time with `tar` because they are oppo
 
 1. Command to verify `auditd` is active:
 
+    `systemctl status auditd`
+
 2. Command to set number of retained logs and maximum log file size:
 
     - Add the edits made to the configuration file below:
 
     ```bash
-    [Your solution edits here]
+    num_logs = 7
+    max_log_file = 35
     ```
 
 3. Command using `auditd` to set rules for `/etc/shadow`, `/etc/passwd` and `/var/log/auth.log`:
@@ -91,18 +138,30 @@ You wouldn't use `-x` and `-c` at the same time with `tar` because they are oppo
     - Add the edits made to the `rules` file below:
 
     ```bash
-    [Your solution edits here]
+    -w /etc/shadow -p wra -k hashpass_audit
+    -w /etc/passwd -p wra -k userpass_audit
+    -w /var/log/auth.log -p wra -k authlog_audit
     ```
 
 4. Command to restart `auditd`:
 
+`sudo systemctl restart auditd`
+
 5. Command to list all `auditd` rules:
+
+`sudo auditctl -l`
 
 6. Command to produce an audit report:
 
+`sudo aureport -au`
+
 7. Create a user with `sudo useradd attacker` and produce an audit report that lists account modifications:
 
+`sudo aureport -m`
+
 8. Command to use `auditd` to watch `/var/log/cron`:
+
+`sudo auditctl -w /var/log/cron`
 
 9. Command to verify `auditd` rules:
 
