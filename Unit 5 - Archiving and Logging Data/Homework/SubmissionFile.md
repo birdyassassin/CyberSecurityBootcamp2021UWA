@@ -23,7 +23,7 @@ Save and submit the completed file for your homework submission.
 **Bonus** 
 - Command to create an incremental archive called `logs_backup_tar.gz` with only changed files to `snapshot.file` for the `/var/log` directory:
 
-`sudo tar cvzf logs_backup.tar.gz --listed-incremental=logs_backup.snar --level=0 /var/log`
+`sudo tar cvzf logs_backup.tar.gz --listed-incremental=snapshot.file --level=0 /var/log`
 
 #### Critical Analysis Question
 
@@ -59,7 +59,7 @@ You wouldn't use `-x` and `-c` at the same time with `tar` because they are oppo
     
     #Simple output free memory logged to free_mem_simple.txt
 
-    free -h | awk '{print $1, $4}' | sed s/total/free/ | sed s/shared/memory/ > ~/backups/freemem/free_mem_simple.txt
+    #free -h | awk '{print $1, $4}' | sed s/total/free/ | sed s/shared/memory/ > ~/backups/freemem/free_mem_simple.txt
 
     #Disk usage logged to disk_usage.txt
 
@@ -75,7 +75,7 @@ You wouldn't use `-x` and `-c` at the same time with `tar` because they are oppo
 
     #Simple file system disk space statistics logged to free_disk_simple.txt
 
-    df -h | awk '{print $1, $2, $3, $5}' | column -t > ~/backups/freedisk/free_disk_simple.txt
+    #df -h | awk '{print $1, $2, $3, $5}' | column -t > ~/backups/freedisk/free_disk_simple.txt
 
     ```
 
@@ -165,23 +165,38 @@ You wouldn't use `-x` and `-c` at the same time with `tar` because they are oppo
 
 9. Command to verify `auditd` rules:
 
+`sudo auditctl -l`
+
 ---
 
 ### Bonus (Research Activity): Perform Various Log Filtering Techniques
 
 1. Command to return `journalctl` messages with priorities from emergency to error:
 
+`sudo journalctl -b -p emerg..err`
+or
+`sudo journalctl -b -p 0..3`
+
 1. Command to check the disk usage of the system journal unit since the most recent boot:
 
-1. Comand to remove all archived journal files except the most recent two:
+`sudo journalctl -b -u systemd-journald -x | less`
 
+2. Comand to remove all archived journal files except the most recent two:
 
-1. Command to filter all log messages with priority levels between zero and two, and save output to `/home/sysadmin/Priority_High.txt`:
+`sudo journalctl --vacuum-files=2`
+
+3. Command to filter all log messages with priority levels between zero and two, and save output to `/home/sysadmin/Priority_High.txt`:
+
+`sudo journalctl -p 0..2 >> /home/sysadmin/Priority_High.txt`
+or
+`sudo journalctl -p emerg..crit >> /home/sysadmin/Priority_High.txt`
 
 1. Command to automate the last command in a daily cronjob. Add the edits made to the crontab file below:
 
     ```bash
-    [Your solution cron edits here]
+    0 0 * * * sudo journalctl -p 0..2 >> /home/sysadmin/Priority_High.txt
+    or
+    @daily sudo journalctl -p 0..2 >> /home/sysadmin/Priority_High.txt
     ```
 
 ---
