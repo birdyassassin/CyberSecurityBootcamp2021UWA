@@ -2,7 +2,7 @@
 
 ### Part One: ARP Attacks
 
-Open the [network_attack_review.pcap](../../../Resources/network_attack_review.pcap). 
+Open the [network_attack_review.pcap](../../Resources/network_attack_review.pcap). 
 
 1. Filter by ARP packets.
 
