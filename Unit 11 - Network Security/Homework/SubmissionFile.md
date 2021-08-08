@@ -420,19 +420,19 @@ Answer the following:
 
 2. What was the adversarial motivation (purpose of attack)?
 
-    Answer: To gain access to the home network via the Trojan thats been downloaded in order to create a backdoor.
+    Answer: To gain access to the home network via the Trojan thats been downloaded in order to create a backdoor into the network.
 
 3. Describe observations and indicators that may be related to the perpetrators of the intrusion. Categorize your insights according to the appropriate stage of the cyber kill chain, as structured in the following table.
 
 | TTP | Example | Findings |
 | --- | --- | --- | 
-| **Reconnaissance** |  How did they attacker locate the victim? | 
-| **Weaponization** |  What was it that was downloaded?|
-| **Delivery** |    How was it downloaded?|
-| **Exploitation** |  What does the exploit do?|
-| **Installation** | How is the exploit installed?|
-| **Command & Control (C2)** | How does the attacker gain control of the remote machine?|
-| **Actions on Objectives** | What does the software that the attacker sent do to complete it's tasks?|
+| **Reconnaissance** |  How did they attacker locate the victim? | Through online resources such as social media and DNS registration websites.
+| **Weaponization** |  What was it that was downloaded?| An executable file for a remote access Trojan
+| **Delivery** |    How was it downloaded?| It was an attached directly to an email inside a zip file  
+| **Exploitation** |  What does the exploit do?| It uses 3 different ActiveX controls to save an executable file to to the %TEMP% folder and opens a PDF file that looks like a real invoice for the user as a decoy while it downloads a payload in the background. The payload is a Trojan downloader that will attempt to phone home to let the attacker have access to the target machine.
+| **Installation** | How is the exploit installed?| A user clicked an attachment on an email.
+| **Command & Control (C2)** | How does the attacker gain control of the remote machine?| Once the trojan phones home the attacker can setup a remote connection that can be used later with HTTP 
+| **Actions on Objectives** | What does the software that the attacker sent do to complete it's tasks?| The attacker is looking to steal PII to be sold on the dark web 
 
 
     Answer: 
@@ -441,12 +441,12 @@ Answer the following:
 4. What are your recommended mitigation strategies?
 
 
-    Answer: 
+    Answer: Firstly training user to not click on email attachments without a scan or making sure that it is from a trusted contact. Also downgraging user permissions to not be able to have any executable files run automatically without an admin password.
 
 
 5. List your third-party references.
 
-    Answer: 
+    Answer: certigo.net/en/news/italian-spam-campaigns-using-js-nemucod-downloader/
 
 
 ---
