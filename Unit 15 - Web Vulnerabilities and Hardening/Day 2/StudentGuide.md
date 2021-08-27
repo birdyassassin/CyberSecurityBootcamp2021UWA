@@ -368,8 +368,6 @@ Because a directory traversal attack is conducted by using the dot-slash method 
 
 ### 04. Directory Traversal Activity Review
 
-- [Solution Guide: Directory Traversal](Activities/02_Directory_Traversal/Solved/README.md)
-
 
 ### 05.  Web Application Back-End Code 
 
