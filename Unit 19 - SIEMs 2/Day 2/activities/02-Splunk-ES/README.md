@@ -26,7 +26,7 @@ For this activity, we will use the Splunk Cloud Enterprise Security Sandbox 7-da
 
 - :warning: **Heads Up**: If you experience issues when registering for their free Splunk Account, use the following troubleshooting document with Splunk Registration Issues and Fixes.
 
-   - [Splunk Registration Issues and Fixes](../../../SplunkRegistrationIssueandWorkarounds.docx)
+   - [Splunk Registration Issues and Fixes](../../SplunkRegistrationIssueandWorkarounds.docx)
    
 - After logging in, access the Splunk Enterprise Security Application   
 
