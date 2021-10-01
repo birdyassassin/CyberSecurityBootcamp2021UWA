@@ -46,7 +46,7 @@ Locate the two screens inside Kibana that you will use to visualize this traffic
 - Metrics
 - Logs
 
-  ![](../Unit 13\ -\ ELK\ Stack\ Project/Images/metrics-kibana/Metrics-Logs.png)
+  ![](../Unit%2013%20-%20ELK%20Stack%20Project/Images/metrics-kibana/Metrics-Logs.png)
 
 These pages will show you the changes in data that we will create.
 
@@ -54,11 +54,11 @@ These pages will show you the changes in data that we will create.
 
 Click on logs to view some general system logs coming from the web machines.
 
-![](../Unit\ 13\ -\ ELK\ Stack\ Project/Images/metrics-kibana/Logs-General.png")
+![](../Unit%2013%20-%20ELK%20Stack%20Project/Images/metrics-kibana/Logs-General.png")
 
 Notice that you can Stream logs live from the machines. 
 
-![](../Unit\ 13\ -\ ELK\ Stack\ Project/Images/metrics-kibana/Stream-Live.png)
+![](../Unit%2013%20-%20ELK%20Stack%20Project/Images/metrics-kibana/Stream-Live.png)
 
 **Metrics:**
 
@@ -70,11 +70,11 @@ Next, click on **Metrics** on the left side.
 
 - Choose **View metrics** from the dropdown that appears.
 
-  ![](../Unit 13\ -\ ELK\ Stack\ Project/Images/metrics-kibana/Metric-VM-Dropdown.png)
+  ![](../Unit%2013%20-%20ELK%20Stack%20Project/Images/metrics-kibana/Metric-VM-Dropdown.png)
 
 - Notice that you can see CPU and Memory usage here.
 
-  ![](../Unit 13\ -\ ELK\ Stack\ Project/Images/metrics-kibana/Host-Overview.png)
+  ![](../Unit%2013%20-%20ELK%20Stack%20Project/Images/metrics-kibana/Host-Overview.png)
 
 ### Going Further
 
