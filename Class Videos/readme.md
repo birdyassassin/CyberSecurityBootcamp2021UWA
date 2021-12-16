@@ -24,3 +24,9 @@ You can select the individual videos below
 [Unit 3.2 - Introduction to Terminal and Bash II](https://youtu.be/VOUOxxINb0c)
 
 [Unit 3.3 - Introduction to Terminal and Bash III](https://youtu.be/0g4CUY-38-g)
+
+[Unit 4.1 - Linux Administration and Hardening I](https://youtu.be/fmlf-68zBbk)
+
+[Unit 4.2 - Linux Administration and Hardening II](https://youtu.be/AzInxT5zIYk)
+
+[Unit 4.3 - Linux Administration and Hardening III](https://youtu.be/mOGeb6tJIks)
