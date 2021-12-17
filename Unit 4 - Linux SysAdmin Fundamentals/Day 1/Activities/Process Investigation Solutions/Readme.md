@@ -39,7 +39,7 @@ The goal of this activity was to identify resource draining services affecting o
    - Which process uses the most memory?
      - Solution: `gnome-shell`
 
-![2](images/2.png)
+![2](Images/2.png)
 
 
 3. Search all running processes for a specific user.
@@ -52,7 +52,7 @@ The goal of this activity was to identify resource draining services affecting o
      **Hint**: In the previous exercise, you found a home folder for a user who should not be on this system. Is that user running processes?
       - Solution: Jack is running the `stress-ng` processes
       
-![3](images/3.png)
+![3](Images/3.png)
 
 **Bonus**
 
@@ -64,7 +64,7 @@ The goal of this activity was to identify resource draining services affecting o
     - In the short list of output, do you notice any processes that appear suspicious?
       - Solution: Yes, Jack is running a process `stress0ng --matrix 0 --times`. These commands intentionally stress the system and consume resources which could result in a Denial of Service from the server.
 
-![4](images/4.png)
+![4](Images/4.png)
 
 5. Identify the ID of any suspicious process. Stop that process with the `kill` command.
     - Solution: Run `kill <PID number>` or `kill 4714 4715`.
