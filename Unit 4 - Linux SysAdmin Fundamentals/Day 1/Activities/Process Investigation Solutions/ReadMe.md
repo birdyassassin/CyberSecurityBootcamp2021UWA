@@ -26,6 +26,7 @@ The goal of this activity was to identify resource draining services affecting o
       - Solution: You can enable column highlighting and sorting by pressing the `x` key. By default, the `%CPU` column is highlighted and sorted by highest `CPU` usage.
 ​
 ​
+
 2. To get an idea of how the system is currently running, answer these questions:
 ​
    **Note:** Answers will vary by machine. We'll use the following example image to answer these questions
@@ -37,9 +38,12 @@ The goal of this activity was to identify resource draining services affecting o
      - Solution: `0`
 ​
    - Which process uses the most memory?
+   
      - Solution: `gnome-shell`
+
+
 ​
-![2](images/2.png)
+![2](Images/2.png)
 ​
 ​
 3. Search all running processes for a specific user.
@@ -52,10 +56,14 @@ The goal of this activity was to identify resource draining services affecting o
      **Hint**: In the previous exercise, you found a home folder for a user who should not be on this system. Is that user running processes?
       - Solution: Jack is running the `stress-ng` processes
       
-![3](images/3.png)
+![3](Images/3.png)
+
 ​
+
+
 **Bonus**
 ​
+
 4. Next, take a static "snapshot" of all currently running processes, and save it to a file in your home directory with the name `currently_running_processes`.
 ​
     - Use the flag to list all processes that have a TTY terminal.
@@ -63,15 +71,18 @@ The goal of this activity was to identify resource draining services affecting o
 ​
     - In the short list of output, do you notice any processes that appear suspicious?
       - Solution: Yes, Jack is running a process `stress0ng --matrix 0 --times`. These commands intentionally stress the system and consume resources which could result in a Denial of Service from the server.
+      
 ​
-![4](images/4.png)
+![4](Images/4.png)
 ​
+
 5. Identify the ID of any suspicious process. Stop that process with the `kill` command.
     - Solution: Run `kill <PID number>` or `kill 4714 4715`.
 ​
 ​
 ​
 ​
+
 6. `Kill` all processes launched by the user who started the command you just stopped. 
 ​
     - Use Google and the man pages to identify a command and flag that will let you stop all processes owned by a specific user.
