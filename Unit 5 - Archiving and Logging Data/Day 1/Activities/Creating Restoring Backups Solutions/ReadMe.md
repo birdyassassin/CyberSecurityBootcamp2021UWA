@@ -205,7 +205,7 @@ This step would normally precede step 3 above.
 ​
 **Supplemental Reading:** HEr is an article that highlights how a hacker steals millions of medical records to sell on the fark web.
 ​
-  - [CBS News: Hackers Steal Medical Records, Sell Them on Dark Web]((<https://www.cbsnews.com/news/hackers-steal-medical-records-sell-them-on-dark-web/>))
+  - [CBS News: Hackers Steal Medical Records, Sell Them on Dark Web](<https://www.cbsnews.com/news/hackers-steal-medical-records-sell-them-on-dark-web/>)
 ​
 ​
 ---
