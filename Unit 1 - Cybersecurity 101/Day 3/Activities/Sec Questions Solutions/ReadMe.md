@@ -18,6 +18,7 @@
     - Hacktivist groups might have minor funding from opposing viewpoint factions but the funding is not significant or comparable to nation states.
 ​
 ​
+
 **Question 2**
 ​
   - Which feature of insider threat actors makes them especially dangerous to an organization?
@@ -34,6 +35,7 @@
 ​
     - Script kiddies use prebuilt or canned programs for attacks. Such attacks would likely give away the insider’s position and intent.
 ​
+
 **Question 3**
 ​
   - Of the several types of threat actors, which one is a novice with little experience as a hacker?
@@ -50,6 +52,7 @@
     
     - A competitor may attempt to hack, compromise, or sabotage another company or an individual’s work to gain a competitive edge.
 ​
+
 **Question 4**
 ​
   - Which threat actor is most likely to be highly skilled in launching attacks involving APTs against targets?
@@ -66,6 +69,7 @@
     
     - Organized crime rings are highly skilled but they do not launch APTs against a target. 
 ​
+
 **Question 5**
 ​
   - A group known as Takedown hacked into your political action committee website and defaced it. Which type of threat actor is most likely responsible for the attack?
@@ -83,6 +87,7 @@
     
     - It’s unlikely that a competitor would deface the site. They would more likely search for a list of donors or other sensitive information.
 ​
+
 **Question 6**
 ​
   - What aspect of cybercrime often motivates script kiddies to hack into systems or into a company?
@@ -99,6 +104,7 @@
    
     - Private or secret information motivates insiders to become threats. Script kiddies do not gain profits by having access to private or secret information. 
 ​
+
 **Question 7**
 ​
   - Which of the following motivates a hacktivist to perpetrate a website defacing or an informational breach?
