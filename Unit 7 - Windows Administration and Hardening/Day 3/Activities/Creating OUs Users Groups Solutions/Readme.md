@@ -109,7 +109,7 @@ Make sure you're connected to the **Windows Server machine**.
 
   - It should be on the same level as `GC Users`, as shown in the following screenshot:
 
-  - ![GC Computers OU](../../../../../Images/BonusGcComputerOu.png)
+  - ![GC Computers OU](../../Images/BonusGcComputerOu.png)
 
 ---
  © 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
