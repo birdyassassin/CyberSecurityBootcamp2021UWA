@@ -7,7 +7,7 @@
 
 3. View the messages in the **Data Content** pane.
 
-    ![sms messsages](Images/sms.png)
+    ![sms messsages](../../Images/sms.png)
 
 4. Analyze the SMS messages and phone numbers to establish connections to the case.
 
