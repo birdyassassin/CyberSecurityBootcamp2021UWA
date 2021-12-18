@@ -27,7 +27,7 @@
 
     - Floating IP: This can remain the default (**Disabled**).
 
-    ![](../../../Images/Load-Balancer/LBRuleSettings.png)
+    ![.](../../Images/Load-Balancer/LBRuleSettings.png)
 
 
 2. Create a new security group rule to allow port `80` traffic from the internet to your internal VNet.
@@ -46,7 +46,7 @@
 
     - Name: Choose an appropriate name that you can recognize later.
 
-![](../../../Images/HTTP-SG/HTTP-Rule.png)
+![.](../../Images/HTTP-SG/HTTP-Rule.png)
 
 3. Remove the security group rule that blocks _all_ traffic on your vnet to allow traffic from your load balancer through. 
 
@@ -60,7 +60,7 @@
     
         - For example: `http://40.122.71.120/setup.php`
 
-![](../../../Images/HTTP-SG/DVWA-Test.png)
+![.](../../Images/HTTP-SG/DVWA-Test.png)
 
 **Note:** With the stated configuration, you will not be able to access these machines from another location unless the security Group rule is changed.
 
