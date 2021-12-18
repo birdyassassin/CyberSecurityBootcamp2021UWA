@@ -7,7 +7,7 @@
 
 1. Searching **site:megacorpone.com**, we can find the following information:
 
- ![index](../../../Images/index.png)
+ ![index](../../Images/index.png)
 
   - Index of /assets provides server enumeration information.
 
@@ -15,7 +15,7 @@
 
      - Attackers can use the domain name and port information during their network scans.
 
-   ![Server Info](../../../Images/GHACK_SERVER_INFO.png)
+   ![Server Info](../../Images/GHACK_SERVER_INFO.png)
 
 - www.megacorpone.com/about provides user enumerated information.
 
