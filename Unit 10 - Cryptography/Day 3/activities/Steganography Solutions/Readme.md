@@ -10,7 +10,7 @@ The goal of this activity was to demonstrate how steganography is used as an app
   
   - The image should display a DeLorean car:
   
-       ![delorean](images/mydreamcar.jpg)
+       ![delorean](../../images/mydreamcar.jpg)
        
 - Next, from the command line, go to your desktop directory to run the following `steghide` command:
 
