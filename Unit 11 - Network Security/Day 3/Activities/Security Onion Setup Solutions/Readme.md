@@ -18,7 +18,7 @@ Log into the Security Onion machine with the following credentials:
 
    - Output should look similar to below:
 
-      ![NSM Status](../../Images/SO_Status.png)
+      ![NSM Status](../../../Images/SO_Status.png)
 
 
    - Ensure all statuses are `OK`.
