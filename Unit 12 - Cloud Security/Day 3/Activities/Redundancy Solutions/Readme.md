@@ -24,7 +24,7 @@ To complete this activity, you had to create a copy of your VM using your Ansibl
 
         - Copy the key into your configuration.
 
-    ![](../../../Images/new-VM/new-vm-config.png)
+    ![.](../../Images/new-VM/new-vm-config.png)
 
     - For your **Availability set**, set **RedTeamAS**.
 
@@ -32,7 +32,7 @@ To complete this activity, you had to create a copy of your VM using your Ansibl
     
     - Do not assign a load balancer.
 
-![](../../../../2/Images/provisioner-setup/vm-networking.png)
+![.](../../../2/Images/provisioner-setup/vm-networking.png)
 
 2. Once your machine is set up, connect to the Ansible container on your jump box and test the Ansible connection using SSH.
 
@@ -54,7 +54,7 @@ To complete this activity, you had to create a copy of your VM using your Ansibl
 
     - Get the internal IP from the VM details page in Azure:
 
-    ![](../../../Images/new-VM/vm-details.png)
+    ![.](../../Images/new-VM/vm-details.png)
 
     - On your Ansible container, run `nano /etc/ansible/hosts`.
 
