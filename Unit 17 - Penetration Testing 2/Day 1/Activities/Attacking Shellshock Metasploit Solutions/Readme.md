@@ -8,13 +8,13 @@
  
       - `msfconsole`
  
-   ![Meta 1](../../Images/META_1.png)
+   ![Meta 1](../../Images/M_1.png)
  
 2. Type the command that performs a search for the `shellshock` exploit module:
  
    - `search shellshock`
  
-   ![Meta 2](../../Images/META_2.png)
+   ![Meta 2](../../Images/M_3.png)
  
 3. Type the command that loads the `exploit/multi/http/apache_mod_cgi_bash_env_exec` module:
  
@@ -24,7 +24,7 @@
  
    - `show options`
  
-   ![Meta 3](../../Images/META_3.png)
+   ![Meta 3](../../Images/MSF_3.png)
  
 5. Now that the `exploit/multi/http/apache_mod_cgi_bash_env_exec` module is loaded, configure the module's target using the victim's IP address and specify which MSF exploit module to use.
  
