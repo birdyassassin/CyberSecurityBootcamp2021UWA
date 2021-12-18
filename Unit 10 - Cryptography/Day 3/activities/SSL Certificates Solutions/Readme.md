@@ -11,11 +11,11 @@ This activity showed how SSL certificates can assist with the authentication of 
  
  - View the certificate of the website. To do this, click on the purple icon next to the website.
  
-    ![cert1](images/cert1.jpg)
+    ![cert1](../../images/cert1.jpg)
  
  - There is a clear warning of an issue with certificate and the website.
  
-    ![cert2](images/cert2.jpg)
+    ![cert2](../../images/cert2.jpg)
   
   - To further view the details, click on the purple icon next to **Certificate (Invalid)**.
   
@@ -23,24 +23,24 @@ This activity showed how SSL certificates can assist with the authentication of 
   
   - Begin by viewing the **General** tab.
   
-    ![cert3](images/cert3.jpg)
+    ![cert3](../../images/cert3.jpg)
   
   - We can see that this is invalid because the root authority that issued the certificate is not trusted by the browser.
   
   - Also, the certificate is expired.
   
-    ![cert4](images/cert4.jpg)
+    ![cert4](../../images/cert4.jpg)
    
 - Close this page by clicking the **x**. Click on **Certification Path**.
    
-    ![cert5](images/cert5.jpg)
+    ![cert5](../../images/cert5.jpg)
    
 - This clearly shows that while a certificate was issued, the issuing root authority's name is highly suspicious:
    - No Verification Certificate Authority 
 - The intermediate certificate authority name is also suspicious: 
    - Alphabet Bandit Certificate Authority
            
-    ![cert6](images/cert6.jpg)        
+    ![cert6](../../images/cert6.jpg)        
            
   - What is the root certificate for this website?
       -  No Verification Certificate Authority
