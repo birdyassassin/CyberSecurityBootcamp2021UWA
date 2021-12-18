@@ -32,7 +32,7 @@ To complete this activity, you had to create a copy of your VM using your Ansibl
     
     - Do not assign a load balancer.
 
-![.](../../../2/Images/provisioner-setup/vm-networking.png)
+![.](../../../Day%202/Images/provisioner-setup/vm-networking.png)
 
 2. Once your machine is set up, connect to the Ansible container on your jump box and test the Ansible connection using SSH.
 
