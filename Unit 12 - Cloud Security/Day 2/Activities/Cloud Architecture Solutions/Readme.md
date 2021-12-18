@@ -7,11 +7,11 @@ In this activity, you considered network architectures from a combined administr
 
 Example 1: This setup uses one gateway to access the network.
 
-![](Images/One_gateway.png)
+![.](../Images/infrastructure_architecture/One_gateway.png)
 
 Example 2: This setup uses two gateways to access the network.
 
-![](Images/Two_gateways.png)
+![.](../Images/infrastructure_architecture/Two_gateways.png)
 
 
 What are the pros and cons of each example and which do you prefer?
@@ -36,11 +36,11 @@ Summary
 
 Example 1: This setup uses a single database for an organization.
 
-![](Images/single_database.png)
+![.](../Images/infrastructure_architecture/single_database.png)
 
 Example 2: This setup splits up databases for each department into separate servers.
 
-![](Images/Sharding.png)
+![.](../Images/infrastructure_architecture/Sharding.png)
 
 
 What are the pros and cons of each example and which do you prefer?
@@ -66,11 +66,11 @@ Summary
 
 Example 1: This setup has logs from each web server sent to a SIEM server, which saves logs to its database located on a separate server. 
 
-![](Images/Splunk_server.png)
+![.](../Images/infrastructure_architecture/Splunk_server.png)
 
 Example 2: This setup sends logs directly to a log server. 
 
-![](Images/log_server.png)
+![.](../Images/infrastructure_architecture/log_server.png)
 
 What are the pros and cons of each example and which do you prefer?
 
