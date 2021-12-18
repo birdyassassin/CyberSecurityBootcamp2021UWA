@@ -56,7 +56,7 @@ Open your Azure portal and search for "virtual machines."
 
 - Use the **+ Add** button or the **Create virtual machine** button to create a new VM.
 
-    ![](../../../Images/VM/CreateVM.png)
+    ![.](../../Images/VM/CreateVM.png)
 
 Use the following settings for this VM: 
 
@@ -89,7 +89,7 @@ For SSH, use the following settings:
 
 - Select inbound ports: Ignore this setting. It will be overwritten when you choose your security group.
 
-![](../../../Images/VM/VMSettings.png)
+![.](../../Images/VM/VMSettings.png)
 
 Move to the **Networking** tab and set the following settings:
 
@@ -99,7 +99,7 @@ Move to the **Networking** tab and set the following settings:
 
 - Public IP: Choose `Create new` and choose `Static` under Assignment in the side panel. Give the IP Address a unique name.
 
-![](../../../Images/VM/Static-IP.png)
+![.](../../Images/VM/Static-IP.png)
 
 - NIC network security group: Choose the Advanced option so we can specify our custom security group.
 
@@ -111,11 +111,11 @@ Move to the **Networking** tab and set the following settings:
 
 - Load balancing: Keep as the default setting (No).
 
-    ![](../../../Images/VM/VMNetworking.png)
+    ![.](../../Images/VM/VMNetworking.png)
 
 - Click on **Review + create**.
 
-    ![](../../../Images/VM/FinalizeVM.png)
+    ![.](../../Images/VM/FinalizeVM.png)
 
 - Finalize all your settings and create the VM by clicking on the **Create** button.
 
@@ -146,7 +146,7 @@ Create 2 more new VMs. Keep the following in mind when configuring these VM's:
 
 **Important:** Make sure both of these VM's are in the same availability Set. Under Availability Options, select 'Availability Set'. Click on 'Create New' under the Availability set. Give it an appropriate name. After creating it on the first VM, choose it for the second VM.
 
-![](../../../Images/Avail_Set/Avail-Set.png)
+![.](../../Images/Avail_Set/Avail-Set.png)
 
 In the **Networking** tab and set the following settings:
 
@@ -156,7 +156,7 @@ In the **Networking** tab and set the following settings:
 
 - Public IP: NONE! Make sure these web VM's do not have a public IP address.
 
-![](../../../Images/Avail_Set/No-Ip.png)
+![.](../../Images/Avail_Set/No-Ip.png)
 
 - NIC network security group: Choose the Advanced option so we can specify our custom security group.
 
@@ -172,7 +172,7 @@ In the **Networking** tab and set the following settings:
 
 The final WebVM's should resemble the following:
 
-![](../../../Images/Avail_Set/final-VM.png)
+![.](../../Images/Avail_Set/final-VM.png)
 
 --- 
 © 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
