@@ -10,7 +10,7 @@ In this activity, you learned how to use Nmap Scripting Engine (NSE) and its ass
  
     - In the dropdown menu next to **Profile**, choose **Quick scan**.
   
-      ![Zen 1](../../Images/ZEN_1.png)
+      ![Zen 1](../../Images/NSE_1.png)
   
     - Click the **Profile** tab at the top and select **Edit Selected Profile**.
   
@@ -20,7 +20,7 @@ In this activity, you learned how to use Nmap Scripting Engine (NSE) and its ass
   
     - Click **Save Changes** to save the profile settings.    
 
-       ![Zen 2](../../Images/ZEN_2.png)
+       ![Zen 2](../../Images/NSE_2.png)
     
    - What is the raw Nmap command that Zenmap will run? Define each component of the command.
  
@@ -35,7 +35,7 @@ In this activity, you learned how to use Nmap Scripting Engine (NSE) and its ass
  
    - The scan results from the `ftp-vsftpd-backdoor` script should now be displayed within the Nmap output.
  
-     ![Zen 3](../../Images/ZEN_3.png)
+     ![Zen 3](../../Images/NSE_3.png)
  
    - Analyze the output. What do you notice?
  
