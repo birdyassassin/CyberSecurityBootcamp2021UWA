@@ -10,7 +10,7 @@ In this activity, you used Nmap in an investigative capacity.
     
       - `nmap -sT 192.168.0.10`
       
-   ![TCP Connect](../../Images/nmap1.png)
+   ![TCP Connect](../../Images/nmap-2.PNG)
     
     
    - Of the ports listed, which two present the biggest potential vulnerability and why?   
@@ -24,7 +24,7 @@ In this activity, you used Nmap in an investigative capacity.
    
    Notice that in addition to the service type, Nmap displays the enumerated version numbers.
       
-     ![Version Scan](../../Images/nmap2.png)
+     ![Version Scan](../../Images/NMAP-4.png)
    
    -  What web service and version is running?
    
