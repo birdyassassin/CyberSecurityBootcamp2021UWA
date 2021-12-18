@@ -23,7 +23,7 @@
 
    - This can include spear phishing campaigns that establish trust and convey a sense of urgency with the target.
 
-    ![User Info](Images/GHACK_USER_INFO.png)
+    ![User Info](../../Images/GHACK_USER_INFO.png)
 
 
 2. Using Shodan and the information acquired from Google dorking, find any other useful information that can be used in an attack.
@@ -46,7 +46,7 @@
       - Web server and web application information
       - SSH key information
    
-     ![Shodan 1](Images/SHODAN_IO.png)
+     ![Shodan 1](../../Images/SHODAN_IO.png)
 
 
     - A little further down the page is a list of vulnerabilities from a previous scan.
@@ -57,14 +57,14 @@
         - Network scan information
         - Web server and application vulnerabilities based on software version and type 
 
-   ![Shodan 2](Images/SHODAN_IO_2.png)
+   ![Shodan 2](../../Images/SHODAN_IO_2.png)
 
 
 3. Now we need to exploit certificate transparency by looking for exposed domains.
 
     - Navigate to https://crt.sh and search sans.org in the search box. 
       
-      ![CERT.SH Results](Images/CERT_SH_2.png)
+      ![CERT.SH Results](../../Images/CERT_SH_2.png)
 
      The search returns the following: 
   
