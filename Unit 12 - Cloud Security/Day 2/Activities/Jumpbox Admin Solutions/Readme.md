@@ -39,7 +39,7 @@ Next, log into portal.azure.com to create a security group rule to allow SSH con
         - Description: Write a short description similar to: "Allow SSH from my IP." 
 
 
-	![](../../../Images/limit-ip.png)
+	![.](../../../Images/limit-ip.png)
 
 
 4. Use your command line to SSH to the VM for administration. Windows users should use GitBash.
@@ -63,7 +63,7 @@ Please note that your public IP address will change depending on your location.
 
 **NOTE:** If you need to reset your SSH key, you can do so in the VM details page by selecting 'Reset Password' on the left had column.
 
-![](Images/SSH-Jump/password-reset.png)
+![.](Images/SSH-Jump/password-reset.png)
 
 ---
 © 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved. 
