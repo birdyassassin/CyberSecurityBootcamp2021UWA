@@ -65,7 +65,7 @@ In this activity, you launched a new VM from the Azure portal that could only be
 
     - Get the internal IP for your new VM from the Details page.
 
-![](../../../Images/web-reset-ssh/reset-ssh.png)
+![.](../../Images/web-reset-ssh/reset-ssh.png)
 
 3. After your VM launches, test your connection using `ssh` from your jump box Ansible container.
     - Note: If only TCP connections are enabled for SSH in your security group rule, ICMP packets will not be allowed, so you will not be able to use `ping`.
