@@ -34,7 +34,7 @@ Log into your Kali Linux with the following credentials:
 If executed successfully you should see the following:
 
 
-![.](../../images/vulnerable.png)
+![](images/vulnerable.png)
 
 
 Please note that the purpose of this activity was not to gain a backdoor into the Shellshock machine, but rather notify you if the machine is susceptible to the ShellShock vulnerability. 
