@@ -25,19 +25,19 @@ In this activity, you practiced how to procure relevant case file data and estab
  
      - Located In: `/mobile/Library/Logs/AppleSupport/general.log`
  
-    ![Images/autopsy-listing-pane.png](Images/6.png)
+    ![Images/autopsy-listing-pane.png](../../Images/6.png)
  
   - Integrated Circuit Card ID (ICCID) number: `89014103255195342366`
   
        - Located in: `/logs/lockdownd.log.1`
  
-     ![Images/autopsy-listing-pane.png](Images/8.png)
+     ![Images/autopsy-listing-pane.png](../../Images/8.png)
  
    - International Mobile Equipment Identification (IMEI) number: `012021003735398`
  
       - Located in: `/root/Library/Lockdown/activation_records/wildcard_record.plist`
  
-      ![Images/autopsy-listing-pane.png](Images/5.png)
+      ![Images/autopsy-listing-pane.png](../../Images/5.png)
 
 - Tracy's information:
     - Tracy's phone number: (703) 340-9661
@@ -46,7 +46,7 @@ In this activity, you practiced how to procure relevant case file data and estab
  
       - Located in: `vol5/mobile/Library/Mail`
  
-     ![Images/autopsy-listing-pane.png](Images/9.png)
+     ![Images/autopsy-listing-pane.png](../../Images/9.png)
  
 #### Bonus
  
