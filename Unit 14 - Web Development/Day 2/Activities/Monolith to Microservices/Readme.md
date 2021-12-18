@@ -6,13 +6,13 @@ In this activity you developed a microservices version of an existing web store 
 
 First, let's take a look at the original existing monolith for the web store app:
 
-![Monolith](../../../Images/Activity_1_Unsolved.png)
+![Monolith](../../Images/Activity_1_Unsolved.png)
 
 All of these servers exist in one VM.
 
 Your microservices diagram should be similar to this:
 
-![Microservice Solution](../../../Images/Activity_1_Solution_No_Bonus.png)
+![Microservice Solution](../../Images/Activity_1_Solution_No_Bonus.png)
 
 The microservices include:
 
@@ -47,7 +47,7 @@ Lastly, the APIs will interact with the store app in the following ways:
 
 If you completed the bonus, you should have a diagram similar to the following:
 
-![Microservice with Bonus](../../../Images/Activity_1_Solution.png)
+![Microservice with Bonus](../../Images/Activity_1_Solution.png)
 
 In this diagram, we now have the additional microservices:
 
