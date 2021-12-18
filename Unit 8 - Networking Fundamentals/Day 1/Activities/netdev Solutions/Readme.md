@@ -17,7 +17,7 @@ It's important that your design includes the following characteristics:
   7. There is a firewall between the wireless access point and the network.
   8. The firewall for the wireless access point connects somewhere in the network (behind the load balancers).
 
-  ![shanghai office design](Images/shanghaioffice_bonus.png)
+  ![shanghai office design](../../Images/shanghaioffice_bonus.png)
 
 
 ### Bonus
@@ -28,7 +28,7 @@ Add the following:
 
   10. Line indicating the separation of the DMZ, LAN, and WAN.
 
-  ![shanghai office bonus](Images/shanghai_bonus.png)
+  ![shanghai office bonus](../../Images/shanghai_bonus.png)
 
 ---
 © 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
