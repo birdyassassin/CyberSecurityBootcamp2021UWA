@@ -17,7 +17,7 @@ Log in with the following credentials:
    
     - Output should look similar to below:
    
-     ![NSM Status](SO%20Status.png)
+     ![NSM Status](../../Images/SO_Status.png)
    
       - Ensure all statuses are listed as `OK`.
       - If not, let the `so-status` command run for a few minutes. It can be slow.
